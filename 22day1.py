@@ -1,14 +1,14 @@
-lines = 2251
+f = open('1.txt', 'r')
+lines = f.readlines()
 temp = []
 calories = []
 
-for i in range(lines):
-    n = input()
-    if n != "":
-        temp.append(int(n))
+for line in lines:
+    line = line[:-1]
+    if line != "":
+        temp.append(int(line))
     else:
         calories.append(sum(temp))
-        print(calories)
         temp = []
 
 calories.sort()
